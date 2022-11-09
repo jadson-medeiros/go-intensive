@@ -19,7 +19,7 @@ type OrderRepositoryTestSuite struct {
 func (suite *OrderRepositoryTestSuite) SetupSuite() {
 	db, err := sql.Open("sqlite3", ":memory:")
 	suite.NoError(err)
-	db.Exec("CREATE TABLE orders (id varchar(255) NOT NULL, price float NOT NULL, tax float NOT NULL, final_price float NOT NULL);")
+	db.Exec("CREATE TABLE orders (id varchar(255) NOT NULL, price float NOT NULL, tax float NOT NULL, final_price float NOT NULL, PRIMARY KEY (id));")
 	suite.Db = db
 }
 
